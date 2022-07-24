@@ -6,6 +6,10 @@ if __name__ == '__main__':
       score = [name, score]
       students_list.append(score)
   new_list = [i[1] for i in students_list]
-  new_list = list(set(new_list)).sort()
-  print(students_list[1][0])
-  print(students_list[2][0])
+  new_list = list(set(new_list))
+  new_list.sort()
+  second_lowest_score = new_list[1]
+  students_list.sort(key = lambda x: x[0])
+  for i in range(len(students_list)):
+    if students_list[i][1] == second_lowest_score:
+      print(students_list[i][0])
